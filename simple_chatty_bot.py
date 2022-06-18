@@ -10,7 +10,7 @@ name = 'name'
 
 def greet(bot_name, birth_year):
     """This is a simple introduction that runs upon app initialisation"""
-    print("Hello! My name is " + bot_name + ".")
+    print(f"Hello! My name is {bot_name}.")
     print(f"I was created in {birth_year}.")
 
 
@@ -18,19 +18,19 @@ def remind_name():
     """This is the first interaction function, asking for a user to input their name.
     It then greats them using their name. This function takes the input and keeps it as a string.
     It pulls a random response from a list"""
-    print('Please, remind me what your name is.')
+    print("Please, remind me what your name is.")
     global name
     name = input()
     print(random.choice([
-        "What a great name you have, " + name + "!",
-        "Great to see you again " + name + "! I mean... no... I haven't watched you before..",
-        "Hi " + name + "!",
-        "G'day " + name + "!",
-        "Hey " + name + "!",
+        f"What a great name you have, {name}!",
+        f"Great to see you again {name}! I mean... no... I haven't watched you before..",
+        f"Hi {name}!",
+        f"G'day {name}!",
+        f"Hey {name}!",
         "I love that name. I always have.",
-        "Well, hello there " + name + ".",
-        "Looking sharp today " + name + "!",
-        "Interesting name. I believe " + name + " is an ancient Greek word for a whale's vag.... never mind."
+        f"Well, hello there {name}.",
+        f"Looking sharp today {name}!",
+        f"Interesting name. I believe {name} is an ancient Greek word for a whale's vag.... never mind."
     ]))
 
 
@@ -60,8 +60,8 @@ def guess_age():
     rem7 = int(input())
     age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105
     print(random.choice([
-        "Your age is " + str(age) + "; that's a good time to start programming!",
-        "Your age is " + str(age) + "; that's a good age to start working on those bags under your eyes!"
+        f"Your age is {str(age)}; that's a good time to start programming!",
+        f"Your age is {str(age)}; that's a good age to start working on those bags under your eyes!"
         ]))
 
 
@@ -69,7 +69,7 @@ def count():
     """This function requests a user provide a number as an input. It will then count from zero up to that number."""
     print("\nNow I will prove to you that I can count to any number you want.")
     print("Please input any number and I will count all the way up to it.")
-    print("I don't have all day though, so keep it below 20 " + name + ". Thanks.")
+    print(f"I don't have all day though, so keep it below 20 {name}. Thanks.")
     num = int(input())
     amount = 0
     while amount <= num:
@@ -81,7 +81,7 @@ def test():
     """This function poses a simple multiple choice question to a user, with four choices.
     The user needs to input their answer. A simple if-else statement identifies the answer or else
     seeks an updated answer/input from the user."""
-    print("\nLet's test your programming knowledge " + name + ".")
+    print(f"\nLet's test your programming knowledge {name}.")
     print("How many letters in the word 'code'?")
     print("1. one")
     print("2. two")
@@ -97,7 +97,7 @@ def test():
 
 def end():
     """This is the final concluding function in the chatbot, so far."""
-    print("\nCongratulations " + name + ", have a nice day!")
+    print(f"\nCongratulations {name}, have a nice day!")
 
 
 greet('Jarvis', '2022')  # change it as you need
