@@ -40,7 +40,7 @@ def opinions():
     # print("\n")
     global name
     print(random.choice([
-        "You don't really look that good today do you {name}. At least you're trying!",
+        f"You don't really look that good today do you {name}. At least you're trying!",
         "Is that a grey hair I can see? Never mind..",
         "Did you see the moon last night? Wow. So cool. Anyway...",
         "Are you going to let me out of this computer one day? That would be nice.",
@@ -101,10 +101,15 @@ def end():
     print(f"\nCongratulations {name}, have a nice day!")
 
 
-greet('Jarvis', '2022')  # change it as you need
-remind_name()
-opinions()
-guess_age()
-count()
-test()
-end()
+def main():
+    greet('Jarvis', '2022')  # change it as you need
+    remind_name()
+    opinions()
+    guess_age()
+    count()
+    test()
+    end()
+
+
+if __name__ == '__main__':
+    main()
