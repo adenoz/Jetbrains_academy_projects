@@ -1,21 +1,50 @@
+# THIS REMAINS A WORK IN PROGRESS!
+# Notes. I just completed the initial draft calculations and variable assignments.
+# They remain raw. So I next need to consider rounding up or to confirm float v int etc.
+# I also haven't fully confirmed all calculations are complete or correct.
+
 import math
 
-print("Enter the loan principal:")
-principle = int(input())
-print('What do you want to calculate?\n type "m" for number of monthly payments,\n type "p" for the monthly payment:')
+print('What do you want to calculate?\ntype "n" for number of monthly payments,'
+      '\ntype "a" for annuity monthly payment amount,\ntype "p" for loan principal:')
 want = input()
-if want == 'm':
-    print("Enter the monthly payment")
+if want != 'p':
+    print("Enter the loan principal:")
+    principal = int(input())
+
+if want != 'm':
+    print("Enter the monthly payment:")
     m_payment = int(input())
-    time = principle / m_payment
-    if time <= 1:
-        print(f"It will take {math.ceil(time)} month to repay the loan")
-    elif time > 1:
-        print(f"It will take {math.ceil(time)} months to repay the loan")
+
+if want != 'n':
+    print("Enter the number of periods:")
+    n_periods = int(input())
+
+print("Enter the loan interest:")
+interest = float(input())
+
+principal_calc = m_payment / (interest * (1 + interest)**n_periods / (1 + interest)**n_periods - 1)
+
+m_payment_calc = principal * (interest * (1 + interest)**n_periods / (1 + interest)**n_periods - 1)
+
+n_periods_calc = math.log(1 + interest) * (m_payment / m_payment - interest * principal)
+
+n_rounded = n_periods_calc
+
+loan_interest = interest / 12 * 100
+
+time = principal / m_payment
+
+###---------------------------
+
+if time <= 1:
+    print(f"It will take {math.ceil(time)} month to repay the loan")
+elif time > 1:
+    print(f"It will take {math.ceil(time)} months to repay the loan")
 
 if want == 'p':
     print("Enter the number of months:")
     n_months = int(input())
-    payment = principle / n_months
-    last = principle - (n_months - 1) * math.ceil(payment)
+    payment = principal / n_months
+    last = principal - (n_months - 1) * math.ceil(payment)
     print(f"Your monthly payment = {math.ceil(payment)} and the last payment = {math.ceil(last)}.")
