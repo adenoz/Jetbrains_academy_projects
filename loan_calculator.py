@@ -5,9 +5,12 @@
 
 import math
 
+# DATA CAPTURE
+
 print('What do you want to calculate?\ntype "n" for number of monthly payments,'
       '\ntype "a" for annuity monthly payment amount,\ntype "p" for loan principal:')
 want = input()
+
 if want != 'p':
     print("Enter the loan principal:")
     principal = int(input())
@@ -23,17 +26,41 @@ if want != 'n':
 print("Enter the loan interest:")
 interest = float(input())
 
-principal_calc = m_payment / (interest * (1 + interest)**n_periods / (1 + interest)**n_periods - 1)
-
-m_payment_calc = principal * (interest * (1 + interest)**n_periods / (1 + interest)**n_periods - 1)
-
-n_periods_calc = math.log(1 + interest) * (m_payment / m_payment - interest * principal)
-
-n_rounded = n_periods_calc  # What is this? It doesn't change anything
+# DATA SHAPING AND WRANGLING
 
 loan_interest = interest / 12 * 100
 
+principal_calc = m_payment / (loan_interest * (1 + loan_interest)**n_periods / (1 + loan_interest)**n_periods - 1)
+
+m_payment_calc = principal * (loan_interest * (1 + loan_interest)**n_periods / (1 + loan_interest)**n_periods - 1)
+
+n_periods_calc = math.log(1 + loan_interest) * (m_payment / m_payment - loan_interest * principal)
+
+n_rounded = round(n_periods_calc)  # Is using the round() function what I was thinking here?
+
+if n_rounded <= 12:
+    n_month_only == n_rounded
+elif n_rounded > 12:
+    n_years = n_rounded // 12
+    n_months = n_rounded % 12
+
 time = principal / m_payment
+
+# THE OUTPUTS
+
+if want == 'p':
+print(f"Your loan principal = {HERE}!")
+
+if want == 'm':
+    print(f"Your monthly payment = {HERE}!")
+
+if want == 'n':
+    if n_rounded < 13:
+        print(f"It will take {n_month_only} months to repay this loan!")
+    elif n_rounded > 12:
+        print(f"It will take {n_years} years and {n_months} months to repay this loan!")
+
+
 
 ###---------------------------
 
