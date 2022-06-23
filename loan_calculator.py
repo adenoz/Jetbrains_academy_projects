@@ -1,7 +1,7 @@
 # THIS REMAINS A WORK IN PROGRESS!
 # Notes. I just completed the initial draft calculations and variable assignments.
 # They remain raw. So I next need to consider rounding up or to confirm float v int etc.
-# I also haven't fully confirmed all calculations are complete or correct.
+# I also haven't fully confirmed all calculations are complete or correct. Here.
 
 import math
 
@@ -29,7 +29,7 @@ m_payment_calc = principal * (interest * (1 + interest)**n_periods / (1 + intere
 
 n_periods_calc = math.log(1 + interest) * (m_payment / m_payment - interest * principal)
 
-n_rounded = n_periods_calc
+n_rounded = n_periods_calc  # What is this? It doesn't change anything
 
 loan_interest = interest / 12 * 100
 
