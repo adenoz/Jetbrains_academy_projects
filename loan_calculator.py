@@ -15,7 +15,7 @@ if want != 'p':
     print("Enter the loan principal:")
     principal = int(input())
 
-if want != 'a':
+if want != 'm':
     print("Enter the monthly payment:")
     m_payment = int(input())
 
@@ -49,10 +49,10 @@ time = principal / m_payment
 # THE OUTPUTS
 
 if want == 'p':
-    print(f"Your loan principal = {principal_calc}!")
+print(f"Your loan principal = {HERE}!")
 
-if want == 'a':
-    print(f"Your monthly payment = {m_payment_calc}!")
+if want == 'm':
+    print(f"Your monthly payment = {HERE}!")
 
 if want == 'n':
     if n_rounded < 13:
@@ -63,15 +63,15 @@ if want == 'n':
 
 
 ###---------------------------
-#
-# if time <= 1:
-#     print(f"It will take {math.ceil(time)} month to repay the loan")
-# elif time > 1:
-#     print(f"It will take {math.ceil(time)} months to repay the loan")
-#
-# if want == 'p':
-#     print("Enter the number of months:")
-#     n_months = int(input())
-#     payment = principal / n_months
-#     last = principal - (n_months - 1) * math.ceil(payment)
-#     print(f"Your monthly payment = {math.ceil(payment)} and the last payment = {math.ceil(last)}.")
+
+if time <= 1:
+    print(f"It will take {math.ceil(time)} month to repay the loan")
+elif time > 1:
+    print(f"It will take {math.ceil(time)} months to repay the loan")
+
+if want == 'p':
+    print("Enter the number of months:")
+    n_months = int(input())
+    payment = principal / n_months
+    last = principal - (n_months - 1) * math.ceil(payment)
+    print(f"Your monthly payment = {math.ceil(payment)} and the last payment = {math.ceil(last)}.")
