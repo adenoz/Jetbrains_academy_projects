@@ -15,7 +15,7 @@ if want != 'p':
     print("Enter the loan principal:")
     principal = int(input())
 
-if want != 'm':
+if want != 'a':
     print("Enter the monthly payment:")
     m_payment = int(input())
 
@@ -51,7 +51,7 @@ time = principal / m_payment
 if want == 'p':
 print(f"Your loan principal = {HERE}!")
 
-if want == 'm':
+if want == 'a':
     print(f"Your monthly payment = {HERE}!")
 
 if want == 'n':
@@ -63,6 +63,7 @@ if want == 'n':
 
 
 ###---------------------------
+# DELETE BELOW LATER
 
 if time <= 1:
     print(f"It will take {math.ceil(time)} month to repay the loan")
